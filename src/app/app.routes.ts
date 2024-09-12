@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HomePageComponent } from './components/home-page/home-page.component';
 
 export const routes: Routes = [
-  { path: 'daily', component: WeatherComponent },
+  { path: 'weather', component: WeatherComponent },
   { path: '', component: HomePageComponent },
 ];
 

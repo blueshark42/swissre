@@ -1,23 +1,22 @@
 <div class="view">
-  <div class="input-form">
-    <form (ngSubmit)="searchWeather()">
-      <mat-form-field hintLabel="Max 64 characters" class="city-search-input">
-        <mat-label>Enter your location</mat-label>
-        <input
-          matInput
-          #input
-          maxlength="64"
-          placeholder="Ex. Bratislava"
-          (input)="onInput($event)"
-        />
-        <mat-hint align="end">{{ value().length }}/64</mat-hint>
-      </mat-form-field>
+  <form (ngSubmit)="searchWeather()" class="input-form">
+    <mat-form-field hintLabel="Max 64 characters" class="city-search-input">
+      <mat-label>Enter your location</mat-label>
+      <input
+        matInput
+        #input
+        maxlength="64"
+        placeholder="Ex. Bratislava"
+        (input)="onInput($event)"
+      />
+      <mat-hint align="end">{{ value().length }}/64</mat-hint>
+    </mat-form-field>
 
-      <button class="city-submit-btn" type="submit" mat-fab extended>
-        Search
-      </button>
-    </form>
-  </div>
+    <button class="city-submit-btn" type="submit" mat-fab extended>
+      <mat-icon>search</mat-icon>
+      Search
+    </button>
+  </form>
 
   <div *ngIf="errorMessage" class="error-message">
     <p>{{ errorMessage }}</p>
@@ -52,12 +51,16 @@
         <div class="sun-status-wrapper">
           <div class="sun-status">
             <h5>Sunrise</h5>
-            <p>{{ getLocalTime(weatherData.sys.sunrise, weatherData.timezone) }}</p>
+            <p>
+              {{ getLocalTime(weatherData.sys.sunrise, weatherData.timezone) }}
+            </p>
           </div>
 
           <div class="sun-status">
             <h5>Sunset</h5>
-            <p>{{ getLocalTime(weatherData.sys.sunset, weatherData.timezone) }}</p>
+            <p>
+              {{ getLocalTime(weatherData.sys.sunset, weatherData.timezone) }}
+            </p>
           </div>
 
           <div class="sun-status">
@@ -66,7 +69,8 @@
               {{
                 (weatherData.sys.sunset - weatherData.sys.sunrise) / 3600
                   | number: "1.0-1"
-              }} hours
+              }}
+              hours
             </p>
           </div>
         </div>

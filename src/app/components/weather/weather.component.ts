@@ -10,6 +10,8 @@ import { WindDirectionPipe } from '../../wind-direction.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import {MatIcon} from "@angular/material/icon";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-weather',
@@ -27,6 +29,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatIcon,
+    RouterLink,
   ],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.scss',
@@ -72,7 +76,7 @@ export class WeatherComponent {
     this.weatherService.getWeatherData(city).subscribe({
       next: (result) => {
         this.weatherData = result;
-        console.log(result)
+        console.log(result);
         this.isLoading = false;
       },
       error: (error) => {

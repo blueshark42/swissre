@@ -14,19 +14,17 @@
 .input-form {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: flex-start;
   width: 100%;
   margin-bottom: 2rem;
 }
 
 .city-search-input {
-  margin-right: 1.5rem;
-  padding: 1.2rem 2rem;
-  border-radius: 5px;
   color: $primary-text;
   width: 20vw;
   font-size: 1rem;
+  margin-right: 1rem;
 
   &::placeholder {
     color: $primary-text-dark;
