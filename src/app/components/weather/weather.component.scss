@@ -1,0 +1,85 @@
+@import "../../../styles/theme";
+
+.view {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 15vw;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.city-search-input {
+  background: $secondary-background;
+  border: none;
+  margin-right: 1.5rem;
+  padding: 1.2rem 2rem;
+  border-radius: 5px;
+  color: $primary-text;
+  width: 20vw;
+  font-size: 1rem;
+
+  &::placeholder {
+    color: $primary-text;
+  }
+}
+
+.city-submit-btn {
+  background: $primary-text;
+  color: $background;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+}
+
+.weather-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid $secondary-background;
+  margin-bottom: 1.5rem;
+
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: $primary-text;
+  }
+
+  img {
+    width: 128px;
+    height: 128px;
+  }
+}
+
+.info-card {
+ background: $secondary-background;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: $primary-text;
+}
+
+h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: $primary-text;
+}

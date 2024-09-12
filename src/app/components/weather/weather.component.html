@@ -1,0 +1,72 @@
+<div class="view">
+  <div class="input-form">
+    <form (ngSubmit)="searchWeather()">
+      <input
+        class="city-search-input"
+        type="text"
+        [(ngModel)]="city"
+        name="city"
+        placeholder="City Name"
+        required
+      />
+      <button class="city-submit-btn" type="submit" mat-fab extended>
+        Search
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="isLoading">
+    <p>Loading...</p>
+  </div>
+
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="!weatherData">
+    <section class="weather-summary">
+      <div>
+        <h1>Bratislava, SK</h1>
+        <p>Chance of rain: 0%</p>
+        <p>Temperature: 32 °C</p>
+      </div>
+      <div>
+        <img [src]="getWeatherIconUrl('10d')" alt="Weather Icon" />
+      </div>
+    </section>
+
+    <section class="info-card">
+      <h4>Air Conditions</h4>
+      <div class="info-card-grid">
+        <app-info-card
+          [icon]="'thermostat'"
+          title="Real Feel"
+          content="30 °C"
+        ></app-info-card>
+
+        <app-info-card
+          [icon]="'wind_power'"
+          title="Wind"
+          content="13.54 m/s"
+        ></app-info-card>
+
+        <app-info-card
+          [icon]="'thunderstorm'"
+          title="Chance of Rain"
+          content="0%"
+        ></app-info-card>
+
+        <app-info-card
+          [icon]="'foggy'"
+          title="Humidity"
+          content="53%"
+        ></app-info-card>
+      </div>
+    </section>
+
+    <p>Condition: Sunny</p>
+    <p>Wind Speed: 13.54 m/s</p>
+    <p>Sunrise: 6:54 AM</p>
+    <p>Sunset: 10:35 PM</p>
+  </div>
+</div>

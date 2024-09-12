@@ -1,0 +1,28 @@
+@import "../../../styles/theme";
+
+.info-card {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+
+  .icon {
+    color: $primary-text-dark;
+    margin: 0 0.5rem 1rem 0;
+  }
+
+  .details {
+    h4 {
+      margin: 0;
+      font-size: 1rem;
+      color: $primary-text-dark;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+  }
+}
