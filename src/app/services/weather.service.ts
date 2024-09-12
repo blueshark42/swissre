@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../environments/environment.prod';
-import {IWeatherData} from "../components/weather/weather.interface";
-
+import { IWeatherData } from '../components/weather/weather.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +18,7 @@ export class WeatherService {
       .set('q', city)
       .set('appid', this.apiKey)
       .set('units', 'metric');
+
     return this.http.get<IWeatherData>(this.apiUrl, { params });
   }
 }

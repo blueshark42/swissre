@@ -21,8 +21,6 @@
 }
 
 .city-search-input {
-  background: $secondary-background;
-  border: none;
   margin-right: 1.5rem;
   padding: 1.2rem 2rem;
   border-radius: 5px;
@@ -32,10 +30,6 @@
 
   &::placeholder {
     color: $primary-text-dark;
-  }
-
-  &:hover {
-    background: $secondary-background-hover;
   }
 }
 
@@ -197,7 +191,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 
 section.info-card {
   display: flex;

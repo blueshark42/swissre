@@ -1,14 +1,18 @@
 <div class="view">
   <div class="input-form">
     <form (ngSubmit)="searchWeather()">
-      <input
-        class="city-search-input"
-        type="text"
-        [(ngModel)]="city"
-        name="city"
-        placeholder="City Name"
-        required
-      />
+      <mat-form-field hintLabel="Max 64 characters" class="city-search-input">
+        <mat-label>Enter your location</mat-label>
+        <input
+          matInput
+          #input
+          maxlength="64"
+          placeholder="Ex. Bratislava"
+          (input)="onInput($event)"
+        />
+        <mat-hint align="end">{{ value().length }}/64</mat-hint>
+      </mat-form-field>
+
       <button class="city-submit-btn" type="submit" mat-fab extended>
         Search
       </button>
@@ -48,17 +52,22 @@
         <div class="sun-status-wrapper">
           <div class="sun-status">
             <h5>Sunrise</h5>
-            <p>{{weatherData.sys.sunrise * 1000 | date:'H:mm'}}</p>
+            <p>{{ getLocalTime(weatherData.sys.sunrise, weatherData.timezone) }}</p>
           </div>
 
           <div class="sun-status">
             <h5>Sunset</h5>
-            <p>{{weatherData.sys.sunset * 1000 | date:'H:mm'}}</p>
+            <p>{{ getLocalTime(weatherData.sys.sunset, weatherData.timezone) }}</p>
           </div>
 
           <div class="sun-status">
             <h5>Total Sun Time</h5>
-            <p>{{(weatherData.sys.sunset - weatherData.sys.sunrise) / 3600 | number:'1.0-1'}} hours</p>
+            <p>
+              {{
+                (weatherData.sys.sunset - weatherData.sys.sunrise) / 3600
+                  | number: "1.0-1"
+              }} hours
+            </p>
           </div>
         </div>
       </section>
@@ -99,7 +108,7 @@
 
       <div>
         <p class="resources-warning">
-          Resourced marked with a question mark (?) show that the weather
+          Resources marked with a question mark (?) indicate that the weather
           phenomena have not happened or have not been measured for the location
           chosen.
         </p>
