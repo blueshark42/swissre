@@ -10,8 +10,8 @@ import { WindDirectionPipe } from '../../wind-direction.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatIcon} from "@angular/material/icon";
-import {RouterLink} from "@angular/router";
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-weather',
