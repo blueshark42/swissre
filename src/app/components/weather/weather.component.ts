@@ -5,6 +5,8 @@ import {DatePipe, DecimalPipe, NgIf} from "@angular/common";
 import {IWeatherData} from "./weather.interface";
 import {MatFabButton, MatMiniFabButton} from "@angular/material/button";
 import {InfoCardComponent} from "../info-card/info-card.component";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {WindDirectionPipe} from "../../wind-direction.pipe";
 
 @Component({
   selector: 'app-weather',
@@ -17,6 +19,8 @@ import {InfoCardComponent} from "../info-card/info-card.component";
     MatFabButton,
     MatMiniFabButton,
     InfoCardComponent,
+    MatProgressSpinnerModule,
+    WindDirectionPipe,
   ],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.scss',
@@ -50,7 +54,7 @@ export class WeatherComponent {
         this.isLoading = false;
       },
       error: (error) => {
-        console.error("[!] weather.component ->", error);
+        console.error('[!] weather.component ->', error);
         this.errorMessage = 'City not found. Please try again.';
         this.isLoading = false;
       },

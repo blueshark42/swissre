@@ -26,7 +26,11 @@
   font-size: 1rem;
 
   &::placeholder {
-    color: $primary-text;
+    color: $primary-text-dark;
+  }
+
+  &:hover {
+    background: $secondary-background-hover;
   }
 }
 
@@ -38,13 +42,22 @@
   font-size: 1rem;
 }
 
+.error-message {
+  background: rgba(255, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 0 6px 6px 0;
+  border-left: 6px #e10f0f solid;
+
+  p {
+    color: #e10f0f;
+  }
+}
+
 .weather-summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  border-bottom: 1px solid $secondary-background;
-  margin-bottom: 1.5rem;
 
   h1 {
     margin: 0;
@@ -58,28 +71,126 @@
   }
 }
 
+.weather-location {
+  margin: 0;
+  font-weight: bold;
+}
+
+.weather-type {
+  margin: 0;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: $primary-text-dark;
+}
+
+.weather-unit {
+  font-size: 1rem;
+}
+
+.wind-section {
+  p {
+    font-size: 2rem;
+  }
+  .weather-wind-secondary {
+    color: $primary-text-dark;
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+}
+
+.resources-warning {
+  color: $primary-text-dark;
+  font-size: 0.7rem;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.weather-celsius {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 3rem 2rem;
+}
+
+.no-weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+
+  p {
+    font-size: 2rem;
+    color: $primary-text-dark;
+  }
+}
+
+.sun-status-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  .sun-status {
+    h5 {
+      color: $primary-text-dark;
+      font-size: 1rem;
+    }
+
+    p {
+      color: $primary-text;
+      font-size: 2rem;
+    }
+  }
+}
+
 .info-card {
- background: $secondary-background;
+  background: $secondary-background;
   padding: 1rem;
+  margin-bottom: 2rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h4 {
+    color: $primary-text-dark;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+  }
 }
 
 .info-card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
 }
 
-p {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-  color: $primary-text;
+section.info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
 }
 
 h4 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  color: $primary-text;
+}
+
+p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
   color: $primary-text;
 }

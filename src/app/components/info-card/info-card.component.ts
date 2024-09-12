@@ -11,5 +11,4 @@ import {MatIcon} from "@angular/material/icon";
 export class InfoCardComponent {
   @Input() title = '';
   @Input() icon = '';
-  @Input() content = '';
 }
