@@ -1,5 +1,18 @@
 @import "../../../styles/theme";
 
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid-layout($columns: 1fr, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+}
+
 .view {
   display: flex;
   flex-direction: column;
@@ -12,10 +25,8 @@
 }
 
 .input-form {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: flex-start;
+  @include flex(row, flex-start, flex-start);
+
   width: 100%;
   margin-bottom: 2rem;
 }
@@ -51,9 +62,8 @@
 }
 
 .weather-summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, space-between, center);
+
   padding: 1rem 0;
 
   h1 {
@@ -101,9 +111,8 @@
 }
 
 .loading-spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex();
+
   margin-top: 4rem;
 }
 
@@ -118,10 +127,8 @@
 }
 
 .no-weather {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  @include flex();
+
   margin-top: 4rem;
 
   p {
@@ -135,10 +142,9 @@
 }
 
 .sun-status-wrapper {
+  @include flex(row, space-evenly, flex-start);
+
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
 
   .sun-status {
     h5 {
@@ -162,10 +168,8 @@
   padding: 1rem;
   margin-bottom: 2rem;
   border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  @include flex(column);
   text-align: center;
 
   h4 {
@@ -177,13 +181,11 @@
 }
 
 .info-card-grid {
-  display: grid;
-  gap: 1rem;
+  @include grid-layout(1fr, 1rem);
+
   width: 100%;
   justify-items: center;
   align-items: center;
-
-  grid-template-columns: 1fr;
 
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
@@ -195,16 +197,4 @@ section.info-card {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-}
-
-h4 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: $primary-text;
-}
-
-p {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-  color: $primary-text;
 }
