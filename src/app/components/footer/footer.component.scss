@@ -1,0 +1,23 @@
+@import "../../../styles/theme";
+
+.footer-container {
+  background-color: $background;
+  padding: 4rem 1.5rem 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  max-width: 80rem;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.footer-text {
+  margin-top: 2.5rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #6b7280;
+}
